@@ -69,8 +69,8 @@ class CRC:
     """
     Utility class to calculate Zebra CRC-16 algorithm across the received data bytes.
 
-     It is very similar to XMODEM CRC16, but it does not augment, and this has different results.
-     https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/software/cpcl-link-os-pg-en.pdf
+    It is very similar to XMODEM CRC16, but it does not augment, and this has different results.
+    https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/software/cpcl-link-os-pg-en.pdf
 
     :param data_bytes: Bytes object for which to calculate CRC
     """
