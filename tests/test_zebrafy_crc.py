@@ -39,21 +39,15 @@ class TestZebrafyCRC(TestZebrafyCommonBase):
         super().setUp()
         self.crc = CRC(b"Python is fun")
 
-    def test_crc_data_bytes(self):
+    def test_crc_data_bytes(self) -> None:
         """Test CRC data bytes input."""
         with self.assertRaises(ValueError):
             CRC(None)
         with self.assertRaises(TypeError):
             CRC(123)
 
-    def test_crc_poly(self):
-        """Test CRC polynomial input."""
-        self.assertEqual(self.crc.poly, 0x8408)
-        with self.assertRaises(ValueError):
-            self.crc.poly = None
-        with self.assertRaises(TypeError):
-            self.crc.poly = "Test"
-
+    def test_crc_hex(self) -> None:
+        self.assertEqual(self.crc.get_crc_hex_string(), "A641")
 
 if __name__ == "__main__":
     unittest.main()
