@@ -98,9 +98,9 @@ class CRC:
         """
         data = bytearray(self._data_bytes)
         crc = 0x0000
-        for b in data:
-            j = (b ^ (crc >> 8)) & 0xFF
-            crc = CRC_TABLE[j] ^ (crc << 8)
+        for cur_byte in data:
+            index = (cur_byte ^ (crc >> 8)) & 0xFF
+            crc = CRC_TABLE[index] ^ (crc << 8)
 
         return crc & 0xFFFF
 
